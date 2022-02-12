@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Switch>
           <Route path="/search/:keyword"><ResultPage/></Route>
-          <Route exact path="/"><SearchPage /></Route>
+          <Route path="/"><SearchPage /></Route>
       </Switch>
     </div>
   );

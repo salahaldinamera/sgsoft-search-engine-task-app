@@ -10,26 +10,26 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
 
-function SearchField() {
+function SearchField(props) {
     const [ searchQuery, setSearchQuery ] = React.useState();
 
-    const history = useHistory();
+    const history = useHistory({});
 
-    function handleSubmit(event){
-        console.log("test");
-    }
 
+    React.useEffect(() => {
+        setSearchQuery(props.searchQuery);
+    },[props.searchQuery]);
 
     return (
-    <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }} onSubmit={handleSubmit}>
+    <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
         <InputBase
         sx={{ ml: 1, flex: 1 }}
-        placeholder="Search Resources"
+        placeholder={"Search Resources"}
         inputProps={{ 'aria-label': 'search resources' }}
         value = {searchQuery}
         onChange={({target: {value}}) => setSearchQuery(value)}
         />
-        <IconButton type="submit" sx={{ p: '10px' }} aria-label="search" onClick={() => history.push('/search/'+searchQuery)}>
+        <IconButton type="submit" sx={{ p: '10px' }} aria-label="search" onClick={() => searchQuery!==undefined ?history.push('/search/'+searchQuery):setSearchQuery("")}>
         <SearchIcon />
         </IconButton>
     </Paper>

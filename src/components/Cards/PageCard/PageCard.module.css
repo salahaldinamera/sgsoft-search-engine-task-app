@@ -1,0 +1,8 @@
+.TagChipsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.TitleLink{
+    font-size: 24px;
+}

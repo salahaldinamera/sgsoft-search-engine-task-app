@@ -1,0 +1,18 @@
+.ContentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.ResourceImage{
+    width : 150px;
+    margin: 10px;
+}
+
+.TagChipsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.TitleLink{
+    font-size: 24px;
+}
